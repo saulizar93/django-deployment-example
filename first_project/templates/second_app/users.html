@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Users</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Please sign up here:</h1>
+      <form method="post">
+        {{form.as_p}}
+        {% csrf_token %}
+        <input type="submit" class='btn btn-primary'/>
+      </form>
+
+
+      <!-- {% if users %}
+        <ol>
+          {% for person in users %}
+          <li>User Info</li>
+            <ul>
+              <li>First Name: {{person.first_name}}</li>
+              <li>Last Name: {{person.last_name}}</li>
+              <li>Email: {{person.email}}</li>
+            </ul>
+          {% endfor %}
+        </ol>
+      {% endif %} -->
+      <p>To go back, simply click here: <a href="/second_app">/second_app</a> </p>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+  </body>
+</html>

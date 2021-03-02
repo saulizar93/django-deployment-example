@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% extends 'basic_app2/base.html' %}
+{% load static %}
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Winter Soldier Page</title>
+    <link rel="stylesheet" href="{% static "/css/css_styles.css" %}"/>
+  </head>
+  <body>
+    {% block body_block %}
+    <h1>Hi, this is a person of the Winter Soldier</h1>
+    <img src="{% static "images/winter_soldier.jpg" %}" alt="Could not find Winter Soldier image">
+    <h2>Here are your access records</h2>
+
+    <div class="djangotwo">
+      {% if access_records %}
+        <table>
+          <thead>
+            <th>Site Name</th>
+            <th>Date Accessed</th>
+          </thead>
+          {% for acc in access_records %}
+            <tr>
+              <td>{{acc.name}}</td>
+              <td>{{acc.date}}</td>
+            </tr>
+          {% endfor %}
+        </table>
+      {% else %}
+        <p>NO ACCESS RECORDS FOUND!</p>
+      {% endif %}
+
+    </div>
+    {% endblock %}
+  </body>
+</html>
